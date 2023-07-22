@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherCorner</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="partly-cloudy.png">
+</head>
+
+<body onload="start()">
+    <div class="weather-app">
+        <nav class="navbar">
+            <!-- <img src="logo.png" alt="website logo" class="logo"> -->
+            <h2><span style="font-weight: 600; color: orange;">Weather</span><span style="font-weight: 600; color: white;">Corner</span></h2>
+            <div class="search-box">
+                <input type="text" id="search-field" class="search-city" onfocus="keyEnter()" placeholder="Search for cities">
+                <button class="search" onclick="enter()"  ><img src="search.png" alt=""> </button>
+            </div>
+        </nav>
+        <main class="main">
+            <div class="current-weather">
+                <div class="weather">
+                    <div class="name">
+                        <h1 onload="currentWeather()" id="city-name">Banglore</h1><span id="region">West Bengal</span><span id="country">India</span>
+                    </div>
+                    <div class="temp">
+                        <h1 id="city-temp">45°C</h1>
+                        <p>Feels like <span id="feels-like">23°C</span> </p>
+                        <p>Chance of rain  <span id="rain-chance">40%</span> </p>
+                    </div>
+                </div>
+                <div class="weather-image">
+                    <div class="image">
+                        <img id="main-img" src="cloudy.png" alt="">
+                        <h3 class="condition-name" id="text">Cloudy</h3>
+                    </div>
+                    <div class="wind">
+                        <div class="more-info">
+                            <img src="wind.png" alt="wind">
+                            <div class="wind-text">
+                                <h3 id="wind-speed" >5 km/h</h3>
+                                <p>Wind speed</p></div>
+                            </div>
+                            
+                            <div class="humidity">
+                                <img src="humidity.png" alt="humidity">
+                                <div class="humidity-text">
+                                    <h3 id="humidity">40%</h3>
+                                    <p>Humidity</p>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                
+            </div>
+            <div class="future-weather">
+                <div class="sun">
+                    <div class="sun-rise">
+                        <img src="sunrise.png" alt="sunrise">
+                        <h3 id="sunrise-time">5:04 am</h3>
+                        <p>Sunrise</p>
+                    </div>
+                    <div class="sun-set">
+                        <img src="sunset.png" alt="sunset">
+                        <h3 id="sunset-time">5:04 pm</h3>
+                        <p>Sunset</p>
+                    </div>
+                    <div class="max-min">
+                        <img src="temp.png" alt="remperature">
+                        <p>Max-temp: <span id="max-temp">45°C</span> </p>
+                        <p>Min-temp: <span id="min-temp">22°C</span> </p>
+                    </div>
+                </div>
+                <div class="forecast">
+                    <div class="day-1 day">
+                        <img id="img-one" src="cloudy.png" alt="weather condition" class="weather-imager-1">
+                        <h3><span id="day-1-max">45°C</span>/<span id="day-1-min">45°C</span></h3>
+                        <p id="day-1-text">Sunny</p>
+                        <h4>Today</h4>
+
+                    </div>
+                    <div class="day-2 day">
+                        <img id="img-two" src="cloudy.png" alt="weather condition" class="weather-imager-1">
+                        <h3><span id="day-2-max">45°C</span>/<span id="day-2-min">45°C</span></h3>
+                        <p id="day-2-text">Sunny</p>
+                        <h4>Tommorow</h4>
+
+                    </div>
+                    <div class="day-3 day">
+                        <img id="img-three" src="cloudy.png" alt="weather condition" class="weather-imager-1">
+                        <h3><span id="day-3-max">45°C</span>/<span id="day-3-min">45°C</span></h3>
+                        <p id="day-3-text">Sunny</p>
+                        <h4 id="day-3-date">Wednesday</h4>
+
+                    </div>
+                </div>
+
+            </div>
+        </main>
+        <section class="cards">
+            <div class="city-card">
+                <div class="card-temp">
+                    <div class="card-weather">
+                        <img id="card1-img" src="clear.png" alt="image" class="card-image">
+                        <h3 id="card1-text">Cloudy</h3>
+                    </div>
+                    <h2 id="card1-temp">29°C</h2>
+                </div>
+                <h2 id="card1-city">Patna</h2>
+            </div>
+            <div class="city-card">
+                <div class="card-temp">
+                    <div class="card-weather">
+                        <img id="card2-img" src="cloudy.png" alt="image" class="card-image">
+                        <h3 id="card2-text" >Cloudy</h3>
+                    </div>
+                    <h2 id="card2-temp">32°C</h2>
+                </div>
+                <h2 id="card2-city">Chennai</h2>
+            </div>
+            <div class="city-card">
+                <div class="card-temp">
+                    <div class="card-weather">
+                        <img id="card3-img" src="cloudy.png" alt="image" class="card-image" >
+                        <h3 id="card3-text">Cloudy</h3>
+                    </div>
+                    <h2 id="card3-temp">28°C</h2>
+                </div>
+                <h2 id="card3-city">Mumbai</h2>
+            </div>
+            <div class="city-card">
+                <div class="card-temp">
+                    <div class="card-weather">
+                        <img id="card4-img" src="cloudy.png" alt="image" class="card-image">
+                        <h3 id="card4-text">Cloudy</h3>
+                    </div>
+                    <h2 id="card4-temp">33°C</h2>
+                </div>
+                <h2 id="card4-city">Kolkata</h2>
+            </div>
+        </section>
+        <section class="attributes">
+            <span>Copyrigth &copy; All rights reserved</span><span>Credit links for used icons <a href="links.html" target="_blank">click here!</a></span>
+        </section>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
